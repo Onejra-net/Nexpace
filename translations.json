@@ -1,0 +1,630 @@
+{
+  "no_pdf_open": {
+    "pl": "Brak otwartego PDF",
+    "en": "No PDF open"
+  },
+  "open_pdf_alt": {
+    "pl": "Otwórz PDF",
+    "en": "Open PDF"
+  },
+  "refresh": {
+    "pl": "Odśwież",
+    "en": "Refresh"
+  },
+  "paste_prompt_to_ai_chat": {
+    "pl": "🤖 Wklej prompt (PDF + Notatki) do czatu AI",
+    "en": "🤖 Paste prompt (PDF + Notes) into AI chat"
+  },
+  "chars_words_zero": {
+    "pl": "Znaków: 0 | Słów: 0",
+    "en": "Characters: 0 | Words: 0"
+  },
+  "cut_ctrl_x": {
+    "pl": "✂️ Wytnij (Ctrl+X)",
+    "en": "✂️ Cut (Ctrl+X)"
+  },
+  "copy_ctrl_c": {
+    "pl": "📋 Kopiuj (Ctrl+C)",
+    "en": "📋 Copy (Ctrl+C)"
+  },
+  "paste_ctrl_v": {
+    "pl": "📥 Wklej (Ctrl+V)",
+    "en": "📥 Paste (Ctrl+V)"
+  },
+  "copy_prompt_to_clipboard": {
+    "pl": "🤖 Skopiuj prompt (PDF + Notatki) do schowka",
+    "en": "🤖 Copy prompt (PDF + Notes) to clipboard"
+  },
+  "my_links_tools": {
+    "pl": "🔗 Moje Linki / Narzędzia",
+    "en": "🔗 My Links / Tools"
+  },
+  "add_new_link_page": {
+    "pl": "➕ Dodaj nowy link / stronę",
+    "en": "➕ Add new link / page"
+  },
+  "add_custom_link": {
+    "pl": "Dodaj własny link",
+    "en": "Add custom link"
+  },
+  "enter_url": {
+    "pl": "Wprowadź adres URL (np. https://google.pl):",
+    "en": "Enter URL (e.g. https://google.pl):"
+  },
+  "enter_panel_name": {
+    "pl": "Wprowadź nazwę dla tego panelu:",
+    "en": "Enter a name for this panel:"
+  },
+  "page_label": {
+    "pl": "Strona: —",
+    "en": "Page: —"
+  },
+  "save": {
+    "pl": "Zapisz w pamięci aplikacji",
+    "en": "Save to app storage"
+  },
+  "save_as": {
+    "pl": "Zapisz jako plik…",
+    "en": "Save as file…"
+  },
+  "notes": {
+    "pl": "📝 Notatki",
+    "en": "📝 Notes"
+  },
+  "my_links": {
+    "pl": "🔗 Moje Linki",
+    "en": "🔗 My Links"
+  },
+  "ready_to_work": {
+    "pl": "Gotowe do pracy.",
+    "en": "Ready to work."
+  },
+  "open_pdf_2_alt": {
+    "pl": "Otwórz PDF…",
+    "en": "Open PDF…"
+  },
+  "save_as_2": {
+    "pl": "Zapisz jako…",
+    "en": "Save as…"
+  },
+  "load_import_notes": {
+    "pl": "Wczytaj / Importuj notatki…",
+    "en": "Load / Import notes…"
+  },
+  "reset_panel_layout_alt": {
+    "pl": "Resetuj układ paneli",
+    "en": "Reset panel layout"
+  },
+  "exit_alt": {
+    "pl": "Wyjście",
+    "en": "Exit"
+  },
+  "h2_nexpace_version": {
+    "pl": "<h2>Nexpace</h2>\n        <p><b>Wersja:</b>",
+    "en": "<h2>Nexpace</h2>\n        <p><b>Version:</b>"
+  },
+  "ai_assistants": {
+    "pl": "🤖 Asystenci AI",
+    "en": "🤖 AI Assistants"
+  },
+  "pdf_content_value": {
+    "pl": "--- TREŚĆ PDF ---\n{clean_pdf_text if clean_pdf_text else '[Brak tekstu]'}",
+    "en": "--- PDF CONTENT ---\n{clean_pdf_text if clean_pdf_text else '[No text]'}"
+  },
+  "my_notes_value": {
+    "pl": "--- MOJE NOTATKI ---\n{clean_note_text if clean_note_text else '[Brak notatek]'}",
+    "en": "--- MY NOTES ---\n{clean_note_text if clean_note_text else '[No notes]'}"
+  },
+  "page_value": {
+    "pl": "Strona: {page + 1}{suffix}",
+    "en": "Page: {page + 1}{suffix}"
+  },
+  "page_value_loading": {
+    "pl": "Strona: {page + 1}{suffix}  ⏳ Ładowanie notatki…",
+    "en": "Page: {page + 1}{suffix}  ⏳ Loading note…"
+  },
+  "page_value_done": {
+    "pl": "Strona: {page + 1}{suffix}  ✓",
+    "en": "Page: {page + 1}{suffix}  ✓"
+  },
+  "notes_saved_successfully": {
+    "pl": "Notatki zostały zapisane pomyślnie.",
+    "en": "Notes saved successfully."
+  },
+  "export_save_notes_as": {
+    "pl": "Eksportuj / Zapisz notatki jako...",
+    "en": "Export / Save notes as..."
+  },
+  "json_html_file_filter": {
+    "pl": "Plik JSON (*.json);;Plik tekstowy HTML (*.html)",
+    "en": "JSON File (*.json);;HTML File (*.html)"
+  },
+  "load_import_notes_2": {
+    "pl": "Wczytaj / Importuj notatki...",
+    "en": "Load / Import notes..."
+  },
+  "json_file_filter": {
+    "pl": "Plik JSON (*.json)",
+    "en": "JSON File (*.json)"
+  },
+  "loading_pdf": {
+    "pl": "— ładowanie PDF...",
+    "en": "— loading PDF..."
+  },
+  "no_selected_text_to_copy": {
+    "pl": "Brak zaznaczonego tekstu do skopiowania.",
+    "en": "No selected text to copy."
+  },
+  "selected_text_cut": {
+    "pl": "Wycięto zaznaczony tekst do schowka.",
+    "en": "Selected text cut to clipboard."
+  },
+  "no_selected_text_to_cut": {
+    "pl": "Brak zaznaczonego tekstu do wycięcia.",
+    "en": "No selected text to cut."
+  },
+  "no_custom_links_html": {
+    "pl": "<br><center><span style='color:#777; font-size:11px;'>Brak własnych linków.<br>Dodaj je przyciskiem wyżej.</span></center>",
+    "en": "<br><center><span style='color:#777; font-size:11px;'>No custom links.<br>Add them using the button above.</span></center>"
+  },
+  "open": {
+    "pl": "Otwórz",
+    "en": "Open"
+  },
+  "delete_link": {
+    "pl": "Usuń link",
+    "en": "Delete link"
+  },
+  "link_windows": {
+    "pl": "🌐 Okna Linków",
+    "en": "🌐 Link Windows"
+  },
+  "text_truncated": {
+    "pl": "...\n[Tekst przycięty ze względu na długość]",
+    "en": "...\n[Text truncated due to length]"
+  },
+  "context_page": {
+    "pl": "Kontekst (Strona",
+    "en": "Context (Page"
+  },
+  "pdf_content_header": {
+    "pl": "--- TREŚĆ PDF ---",
+    "en": "--- PDF CONTENT ---"
+  },
+  "my_notes": {
+    "pl": "--- MOJE NOTATKI ---",
+    "en": "--- MY NOTES ---"
+  },
+  "instruction_analyze_materials": {
+    "pl": "--- POLECENIE ---\nPrzeanalizuj powyższe materiały i pomóż mi w nauce.",
+    "en": "--- INSTRUCTION ---\nAnalyze the materials above and help me learn."
+  },
+  "item_name_already_exists": {
+    "pl": "Element o takiej nazwie już istnieje.",
+    "en": "An item with this name already exists."
+  },
+  "page_colon": {
+    "pl": "Strona:",
+    "en": "Page:"
+  },
+  "loading_note": {
+    "pl": "⏳ Ładowanie notatki…",
+    "en": "⏳ Loading note…"
+  },
+  "open_pdf_first": {
+    "pl": "Najpierw otwórz PDF.",
+    "en": "Open a PDF first."
+  },
+  "notes_exported_to_value": {
+    "pl": "Wyeksportowano notatki do: {path.name}",
+    "en": "Notes exported to: {path.name}"
+  },
+  "open_pdf_first_to_link_notes": {
+    "pl": "Najpierw otwórz plik PDF, aby powiązać z nim notatki.",
+    "en": "Open a PDF file first to associate notes with it."
+  },
+  "notes_loaded_from_file_value": {
+    "pl": "Pomyślnie wczytano notatki z pliku: {path.name}",
+    "en": "Notes successfully loaded from file: {path.name}"
+  },
+  "pdf_error": {
+    "pl": "Błąd PDF",
+    "en": "PDF Error"
+  },
+  "could_not_read_file_value": {
+    "pl": "Nie udało się odczytać pliku:\n{exc}",
+    "en": "Could not read the file:\n{exc}"
+  },
+  "open_pdf_file_first": {
+    "pl": "Najpierw otwórz plik PDF.",
+    "en": "Open a PDF file first."
+  },
+  "pypdf_error_value": {
+    "pl": "Błąd pypdf: {exc}",
+    "en": "pypdf error: {exc}"
+  },
+  "notes_save_error_value": {
+    "pl": "Błąd zapisu notatek: {exc}",
+    "en": "Error saving notes: {exc}"
+  },
+  "h1_notes_for": {
+    "pl": "<h1>Notatki do:",
+    "en": "<h1>Notes for:"
+  },
+  "h2_page_value_br": {
+    "pl": "<h2>Strona {page}</h2>{content}<br>",
+    "en": "<h2>Page {page}</h2>{content}<br>"
+  },
+  "notes_exported_to": {
+    "pl": "Wyeksportowano notatki do:",
+    "en": "Notes exported to:"
+  },
+  "save_error": {
+    "pl": "Błąd zapisu",
+    "en": "Save error"
+  },
+  "could_not_save_file_value": {
+    "pl": "Nie udało się zapisać pliku:\n{exc}",
+    "en": "Could not save the file:\n{exc}"
+  },
+  "import_error": {
+    "pl": "Błąd importu",
+    "en": "Import error"
+  },
+  "invalid_json_page_dict": {
+    "pl": "Wybrany plik JSON ma nieprawidłowy format (wymagany słownik stron).",
+    "en": "The selected JSON file has an invalid format (a page dictionary is required)."
+  },
+  "notes_loaded_from_file": {
+    "pl": "Pomyślnie wczytano notatki z pliku:",
+    "en": "Notes successfully loaded from file:"
+  },
+  "read_error": {
+    "pl": "Błąd odczytu",
+    "en": "Read error"
+  },
+  "could_not_load_file_value": {
+    "pl": "Nie udało się wczytać pliku:\n{exc}",
+    "en": "Could not load the file:\n{exc}"
+  },
+  "could_not_read_file": {
+    "pl": "Nie udało się odczytać pliku:",
+    "en": "Could not read the file:"
+  },
+  "python_uri_decode_error_value": {
+    "pl": "[Python _on_title_changed] Błąd dekodowania URI: {e}",
+    "en": "[Python _on_title_changed] URI decoding error: {e}"
+  },
+  "chars_words_value": {
+    "pl": "Znaków: {chars} | Słów: {words}",
+    "en": "Characters: {chars} | Words: {words}"
+  },
+  "pypdf_error": {
+    "pl": "Błąd pypdf:",
+    "en": "pypdf error:"
+  },
+  "no_text": {
+    "pl": "[Brak tekstu]",
+    "en": "[No text]"
+  },
+  "no_notes": {
+    "pl": "[Brak notatek]",
+    "en": "[No notes]"
+  },
+  "notes_file_corrupted": {
+    "pl": "Plik notatek jest uszkodzony lub ma nieprawidłowy format.",
+    "en": "The notes file is corrupted or has an invalid format."
+  },
+  "notes_save_error": {
+    "pl": "Błąd zapisu notatek:",
+    "en": "Error saving notes:"
+  },
+  "h2_page": {
+    "pl": "<h2>Strona",
+    "en": "<h2>Page"
+  },
+  "could_not_save_file": {
+    "pl": "Nie udało się zapisać pliku:",
+    "en": "Could not save the file:"
+  },
+  "could_not_load_file": {
+    "pl": "Nie udało się wczytać pliku:",
+    "en": "Could not load the file:"
+  },
+  "page_dash": {
+    "pl": "— strona",
+    "en": "— page"
+  },
+  "prompt_pasted_into_chat": {
+    "pl": "🤖 Prompt został wklejony do okna czatu!",
+    "en": "🤖 Prompt has been pasted into the chat window!"
+  },
+  "copied_click_chat_ctrl_v": {
+    "pl": "Skopiowano do schowka! Kliknij w pole czatu i wciśnij Ctrl+V.",
+    "en": "Copied to clipboard! Click the chat field and press Ctrl+V."
+  },
+  "python_uri_decode_error_prefix": {
+    "pl": "[Python _on_title_changed] Błąd dekodowania URI:",
+    "en": "[Python _on_title_changed] URI decoding error:"
+  },
+  "characters_label": {
+    "pl": "Znaków:",
+    "en": "Characters:"
+  },
+  "words_label": {
+    "pl": "| Słów:",
+    "en": "| Words:"
+  },
+  "clipboard_pasted": {
+    "pl": "Wklejono zawartość ze schowka.",
+    "en": "Clipboard contents pasted."
+  },
+  "clipboard_empty": {
+    "pl": "Schowek jest pusty.",
+    "en": "Clipboard is empty."
+  },
+  "prompt_copied_to_clipboard": {
+    "pl": "Prompt (PDF + Notatki) skopiowany do schowka!",
+    "en": "Prompt (PDF + Notes) copied to clipboard!"
+  },
+  "no_text_on_this_pdf_page": {
+    "pl": "Brak tekstu na tej stronie PDF.",
+    "en": "No text on this PDF page."
+  },
+  "ai.pdf_content": {
+    "pl": "--- TREŚĆ PDF ---",
+    "en": "--- PDF CONTENT ---"
+  },
+  "ai.no_text": {
+    "pl": "[Brak tekstu]",
+    "en": "[No text]"
+  },
+  "ai.no_notes": {
+    "pl": "[Brak notatek]",
+    "en": "[No notes]"
+  },
+  "ai.context": {
+    "pl": "Kontekst (Strona {page_num} z pliku '{pdf_name}'):",
+    "en": "Context (Page {page_num} from file '{pdf_name}'):"
+  },
+  "ai.pdf": {
+    "pl": "--- TREŚĆ PDF ---\n{pdf_text}",
+    "en": "--- PDF CONTENT ---\n{pdf_text}"
+  },
+  "ai.notes": {
+    "pl": "--- MOJE NOTATKI ---\n{notes}",
+    "en": "--- MY NOTES ---\n{notes}"
+  },
+  "ai.command": {
+    "pl": "--- POLECENIE ---\n{custom_question}",
+    "en": "--- INSTRUCTION ---\n{custom_question}"
+  },
+  "ai.default_command": {
+    "pl": "--- POLECENIE ---\nPrzeanalizuj powyższe materiały i pomóż mi w nauce.",
+    "en": "--- INSTRUCTION ---\nAnalyze the materials above and help me learn."
+  },
+  "ai.truncated": {
+    "pl": "...\n[Tekst przycięty ze względu na długość]",
+    "en": "...\n[Text truncated due to length]"
+  },
+  "pdf.loading": {
+    "pl": "{pdf_name} — ładowanie PDF...",
+    "en": "{pdf_name} — loading PDF..."
+  },
+  "pdf.page_count": {
+    "pl": "{pdf_name} — strona {page_num} / {total_pages}",
+    "en": "{pdf_name} — page {page_num} / {total_pages}"
+  },
+  "notes.counter": {
+    "pl": "Znaków: {chars} | Słów: {words}",
+    "en": "Characters: {chars} | Words: {words}"
+  },
+  "notes.page": {
+    "pl": "Strona: {page}",
+    "en": "Page: {page}"
+  },
+  "notes.page_loading": {
+    "pl": "Strona: {page}{suffix}  ⏳ Ładowanie notatki…",
+    "en": "Page: {page}{suffix}  ⏳ Loading note…"
+  },
+  "notes.page_done": {
+    "pl": "Strona: {page}{suffix}  ✓",
+    "en": "Page: {page}{suffix}  ✓"
+  },
+  "notes.save_error": {
+    "pl": "Błąd zapisu notatek: {exc}",
+    "en": "Error saving notes: {exc}"
+  },
+  "notes.exported": {
+    "pl": "Wyeksportowano notatki do: {name}",
+    "en": "Notes exported to: {name}"
+  },
+  "notes.file_read_error": {
+    "pl": "Nie udało się wczytać pliku:\n{exc}",
+    "en": "Could not load the file:\n{exc}"
+  },
+  "notes.file_write_error": {
+    "pl": "Nie udało się zapisać pliku:\n{exc}",
+    "en": "Could not save the file:\n{exc}"
+  },
+  "notes.loaded": {
+    "pl": "Pomyślnie wczytano notatki z pliku: {name}",
+    "en": "Notes successfully loaded from file: {name}"
+  },
+  "pdf.read_error": {
+    "pl": "Nie udało się odczytać pliku:\n{exc}",
+    "en": "Could not read the file:\n{exc}"
+  },
+  "notes.html_title": {
+    "pl": "Notatki do: {name}",
+    "en": "Notes for: {name}"
+  },
+  "notes.html_page": {
+    "pl": "Strona {page}",
+    "en": "Page {page}"
+  },
+  "settings": {
+    "pl": "Ustawienia",
+    "en": "Settings"
+  },
+  "language": {
+    "pl": "Język",
+    "en": "Language"
+  },
+  "language_pl": {
+    "pl": "PL",
+    "en": "PL"
+  },
+  "language_en": {
+    "pl": "ENG",
+    "en": "ENG"
+  },
+  "open_pdf": {
+    "pl": "Otwórz PDF…",
+    "en": "Open PDF…"
+  },
+  "reset_panel_layout": {
+    "pl": "Resetuj układ paneli",
+    "en": "Reset panel layout"
+  },
+  "exit": {
+    "pl": "Wyjście",
+    "en": "Exit"
+  },
+  "about": {
+    "pl": "O programie...",
+    "en": "About..."
+  },
+  "file": {
+    "pl": "Plik",
+    "en": "File"
+  },
+  "view": {
+    "pl": "Widok",
+    "en": "View"
+  },
+  "help": {
+    "pl": "Pomoc",
+    "en": "Help"
+  },
+  "open_pdf_2": {
+    "pl": "Otwórz PDF…",
+    "en": "Open PDF…"
+  },
+  "save_2": {
+    "pl": "Zapisz",
+    "en": "Save"
+  },
+  "about_2": {
+    "pl": "O programie...",
+    "en": "About..."
+  },
+  "pdf_dock": {
+    "pl": "📄 PDF",
+    "en": "📄 PDF"
+  },
+  "copy_pdf_page_text_only": {
+    "pl": "📄 Skopiuj tylko tekst z tej strony PDF",
+    "en": "📄 Copy only the text from this PDF page"
+  },
+  "pdf_page_text_copied": {
+    "pl": "Tekst ze strony PDF skopiowany do schowka!",
+    "en": "Text from the PDF page copied to clipboard!"
+  },
+  "selected_text_copied": {
+    "pl": "Skopiowano zaznaczony tekst do schowka.",
+    "en": "Selected text copied to clipboard."
+  },
+  "no_document_open": {
+    "pl": "Brak otwartego dokumentu",
+    "en": "No document open"
+  },
+  "use_file_open_pdf": {
+    "pl": "Użyj <b>Plik ➔ Otwórz PDF (Ctrl+O)</b>, aby rozpocząć naukę.",
+    "en": "Use <b>File ➔ Open PDF (Ctrl+O)</b> to start learning."
+  },
+  "write_your_notes": {
+    "pl": "Wpisz swoje notatki...",
+    "en": "Write your notes..."
+  },
+  "warning": {
+    "pl": "Uwaga",
+    "en": "Warning"
+  },
+  "notes_title": {
+    "pl": "Notatki",
+    "en": "Notes"
+  },
+  "about_nexpace": {
+    "pl": "O programie Nexpace",
+    "en": "About Nexpace"
+  },
+  "window_name": {
+    "pl": "Nazwa okna",
+    "en": "Window name"
+  },
+  "use_file_open_pdf_to_start": {
+    "pl": "Użyj <b>Plik ➔ Otwórz PDF (Ctrl+O)</b>, aby rozpocząć naukę.",
+    "en": "Use <b>File ➔ Open PDF (Ctrl+O)</b> to start learning."
+  },
+  "about_version": {
+    "pl": "<b>Wersja:</b> {version}",
+    "en": "<b>Version:</b> {version}"
+  },
+  "about_description": {
+    "pl": "Aplikacja Open Source do nauki i pracy z dokumentami PDF wspomagana przez sztuczną inteligencję.",
+    "en": "An Open Source application for learning and working with PDF documents, powered by artificial intelligence."
+  },
+  "about_features": {
+    "pl": "Przeglądarka PDF: Wygodne czytanie i nawigacja po dokumentach.<br>\n        Notatnik stron: Tworzenie i automatyczny zapis notatek powiązanych z konkretnymi stronami PDF.<br>\n        Asystenci AI: Szybki dostęp do popularnych modeli AI z funkcją inteligentnego wklejania kontekstu.",
+    "en": "PDF Viewer: Convenient reading and navigation through documents.<br>\n        Page Notebook: Create and automatically save notes linked to specific PDF pages.<br>\n        AI Assistants: Quick access to popular AI models with intelligent context pasting."
+  },
+  "about_license": {
+    "pl": "Licencja: Open Source",
+    "en": "License: Open Source"
+  },
+  "suggested_notes_filename": {
+    "pl": "Notatki_{stem}.json",
+    "en": "Notes_{stem}.json"
+  },
+  "python_uri_decode_error": {
+    "pl": "[Python _on_title_changed] Błąd dekodowania URI: {e}",
+    "en": "[Python _on_title_changed] URI decoding error: {e}"
+  },
+  "pypdf_error_print": {
+    "pl": "Błąd pypdf: {exc}",
+    "en": "pypdf error: {exc}"
+  },
+  "nav_back": {
+    "pl": "◀",
+    "en": "◀"
+  },
+  "nav_forward": {
+    "pl": "▶",
+    "en": "▶"
+  },
+  "nav_refresh": {
+    "pl": "↻",
+    "en": "↻"
+  },
+  "nav_back_tooltip": {
+    "pl": "Wstecz",
+    "en": "Back"
+  },
+  "nav_forward_tooltip": {
+    "pl": "Dalej",
+    "en": "Forward"
+  },
+  "nav_refresh_tooltip": {
+    "pl": "Odśwież",
+    "en": "Refresh"
+  },
+  "about_website": {
+    "pl": "<a href=\"https://onejra.net\">Onejra</a>",
+    "en": "<a href=\"https://onejra.net\">Onejra</a>"
+  },
+  "about_website_url": {
+    "pl": "https://onejra.net",
+    "en": "https://onejra.net"
+  }
+}

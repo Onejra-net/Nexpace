@@ -1,7 +1,18 @@
-"""Qt stylesheets used by the browser toolbar."""
+
+"""
+Browser toolbar style.
+
+Responsible for:
+- Styling browser navigation buttons
+- Defining button interaction states
+- Styling the read-only URL display
+- Maintaining a consistent dark interface
+"""
 
 
+# Browser navigation button styles:
 BUTTON_STYLE = """
+    /* Default button appearance */
     QPushButton {
         background-color: #333333;
         color: #ffffff;
@@ -14,14 +25,17 @@ BUTTON_STYLE = """
         padding: 0 6px;
     }
 
+    /* Hover state */
     QPushButton:hover {
         background-color: #444444;
     }
 
+    /* Pressed state */
     QPushButton:pressed {
         background-color: #222222;
     }
 
+    /* Disabled state */
     QPushButton:disabled {
         color: #666666;
         background-color: #2a2a2a;
@@ -29,7 +43,9 @@ BUTTON_STYLE = """
 """
 
 
+# Browser URL bar styles:
 URL_BAR_STYLE = """
+    /* Read-only URL display appearance */
     QLineEdit {
         background-color: #2d2d2d;
         color: #aaaaaa;

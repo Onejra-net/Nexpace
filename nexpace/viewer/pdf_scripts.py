@@ -1,15 +1,34 @@
+"""
+PDF.js JavaScript integration management.
+
+Responsible for:
+- Injecting custom scrollbar styling
+- Checking PDF.js application readiness
+- Transferring PDF document bytes to JavaScript
+- Registering PDF.js page event listeners
+- Reporting page changes back to Qt
+"""
+
 import base64
 import json
 
 
 class PdfScriptManager:
-    """Manage JavaScript injected into the PDF.js viewer."""
+    """
+    Coordinator for JavaScript interactions with PDF.js.
+
+    Executes scripts in the embedded web view and manages
+    communication between the Python application and PDF.js.
+    """
 
     def __init__(self, web_view):
         self.web_view = web_view
 
     def inject_dark_scrollbar(self):
-        """Inject dark scrollbar styling into PDF.js."""
+        """
+        Inject dark scrollbar styling into PDF.js.
+        """
+        
         css = """
         const style = document.createElement('style');
 
@@ -39,7 +58,10 @@ class PdfScriptManager:
         self.web_view.page().runJavaScript(css)
 
     def check_viewer_ready(self, callback):
-        """Check whether PDF.js exposes its main application object."""
+        """
+        Check whether PDF.js exposes its main application object.
+        """
+        
         code = """
         Boolean(
             window.PDFViewerApplication &&
@@ -53,7 +75,10 @@ class PdfScriptManager:
         )
 
     def open_bytes_in_viewer(self, data):
-        """Pass PDF bytes to PDF.js."""
+        """
+        Pass PDF bytes to PDF.js.
+        """
+        
         b64 = base64.b64encode(data).decode("ascii")
 
         code = f"""
@@ -87,6 +112,7 @@ class PdfScriptManager:
         Install a PDF.js event hook that reports page changes
         back to Qt through document.title.
         """
+        
         code = r"""
         (() => {
             const app = window.PDFViewerApplication;

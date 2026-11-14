@@ -1,3 +1,13 @@
+"""
+Browser navigation toolbar.
+
+Responsible for:
+- Creating back, forward, and refresh controls
+- Displaying the current browser URL
+- Applying shared toolbar styles and localized labels
+- Providing toolbar widgets for layout integration
+"""
+
 from PySide6.QtWidgets import (
     QHBoxLayout,
     QLineEdit,
@@ -9,9 +19,16 @@ from .styles import BUTTON_STYLE, URL_BAR_STYLE
 
 
 class BrowserToolbar:
-    """Toolbar containing browser navigation controls and the URL display."""
+    """
+    Container for browser navigation controls.
+
+    Provides navigation buttons and a read-only URL bar
+    for integration with the browser panel.
+    """
 
     def __init__(self, parent=None):
+
+        # Back navigation button:
         self.btn_back = QPushButton(
             tr("nav_back"),
             parent,
@@ -21,6 +38,7 @@ class BrowserToolbar:
             tr("nav_back_tooltip")
         )
 
+        # Forward navigation button:
         self.btn_forward = QPushButton(
             tr("nav_forward"),
             parent,
@@ -30,6 +48,7 @@ class BrowserToolbar:
             tr("nav_forward_tooltip")
         )
 
+        # Page refresh button:
         self.btn_refresh = QPushButton(
             tr("nav_refresh"),
             parent,
@@ -39,13 +58,16 @@ class BrowserToolbar:
             tr("nav_refresh_tooltip")
         )
 
+        # Current URL display:
+        # - Read-only to prevent direct address editing.
         self.url_bar = QLineEdit(parent)
         self.url_bar.setReadOnly(True)
         self.url_bar.setStyleSheet(URL_BAR_STYLE)
 
     def add_to_layout(self, layout: QHBoxLayout):
-        """Add toolbar widgets to the supplied layout."""
-        
+        """Add browser controls to the provided horizontal layout."""
+
+        # Toolbar widget arrangement:
         layout.addWidget(self.btn_back)
         layout.addWidget(self.btn_forward)
         layout.addWidget(self.btn_refresh)

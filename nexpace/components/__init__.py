@@ -1,4 +1,6 @@
-"""Browser panel components."""
+"""
+Browser panel components.
+"""
 
 from .browser_toolbar import BrowserToolbar
 from .browser_view import BrowserWebView

@@ -1,3 +1,13 @@
+"""
+PDF.js web view configuration.
+
+Responsible for:
+- Configuring the embedded Qt WebEngine view
+- Setting web content access permissions
+- Displaying the initial empty document screen
+- Loading the external PDF.js viewer
+"""
+
 from PySide6.QtCore import QUrl
 from PySide6.QtWebEngineCore import QWebEngineSettings
 from PySide6.QtWebEngineWidgets import QWebEngineView
@@ -7,8 +17,14 @@ from ..web_engine import DebugWebEnginePage
 
 
 class PdfWebView(QWebEngineView):
-    """QWebEngineView configured specifically for PDF.js."""
+    """
+    WebEngine view configured for PDF.js.
 
+    Manages the browser environment used to display
+    PDF documents within window.
+    """
+
+    # External PDF.js viewer location:
     VIEWER_URL = (
         "https://mozilla.github.io/"
         "pdf.js/legacy/web/viewer.html"
@@ -17,34 +33,44 @@ class PdfWebView(QWebEngineView):
     def __init__(self, parent=None):
         super().__init__(parent)
 
+        # WebEngine page initialization:
         self.pdfjs_page = DebugWebEnginePage(self)
         self.setPage(self.pdfjs_page)
 
+        # Web view appearance:
         self.setStyleSheet(
             "QWebEngineView { border: none; }"
         )
 
+        # WebEngine content access settings:
         settings = self.settings()
 
+        # Allow locally loaded content to access remote URLs:
         settings.setAttribute(
             QWebEngineSettings.WebAttribute
             .LocalContentCanAccessRemoteUrls,
             True,
         )
 
+        # Allow locally loaded content to access file URLs:
         settings.setAttribute(
             QWebEngineSettings.WebAttribute
             .LocalContentCanAccessFileUrls,
             True,
         )
 
+        # Display the initial empty document screen:
         self.setHtml(
             self.empty_html()
         )
 
     @staticmethod
     def empty_html():
-        """Return the HTML shown before a PDF is opened."""
+        """
+        Generate the localized placeholder shown without an open PDF.
+        """
+
+        # Initial placeholder HTML:
         return f"""
         <html>
         <body style='
@@ -77,14 +103,20 @@ class PdfWebView(QWebEngineView):
         """
 
     def is_viewer_url(self):
-        """Return True if PDF.js is currently loaded."""
+        """
+        Check whether the web view URL matches the PDF.js viewer.
+        """
+
         return (
             self.url().toString()
             == self.VIEWER_URL
         )
 
     def load_viewer(self):
-        """Navigate to the PDF.js viewer."""
+        """
+        Navigate to the configured PDF.js viewer URL.
+        """
+
         self.setUrl(
             QUrl(self.VIEWER_URL)
         )

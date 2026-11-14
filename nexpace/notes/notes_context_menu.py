@@ -1,3 +1,14 @@
+"""
+Notes editor context menu management.
+
+Responsible for:
+- Creating the editor context menu
+- Handling text cut, copy, and paste operations
+- Managing clipboard interactions with Quill
+- Copying AI prompts and PDF page text
+- Displaying operation status messages
+"""
+
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QGuiApplication
 from PySide6.QtWidgets import QMenu
@@ -6,7 +17,12 @@ from ..localization import tr
 
 
 class NotesContextMenu:
-    """Create and handle the context menu for the notes editor."""
+    """
+    Coordinator for notes editor context menu actions.
+
+    Connects Quill editing operations, clipboard access,
+    and application-specific PDF and AI functionality.
+    """
 
     def __init__(
         self,
@@ -14,15 +30,21 @@ class NotesContextMenu:
         script_manager,
         main_window,
     ):
+
+        # Editor and application references:
         self.web_view = web_view
         self.scripts = script_manager
         self.main_window = main_window
 
     def show(self, pos):
-        """Display the notes context menu."""
-        
+        """
+        Display the editor context menu and execute the selected action.
+        """
+
+        # Context menu initialization:
         menu = QMenu(self.web_view)
 
+        # Text editing actions:
         action_cut = menu.addAction(
             tr("cut_ctrl_x")
         )
@@ -37,6 +59,7 @@ class NotesContextMenu:
 
         menu.addSeparator()
 
+        # Application-specific clipboard actions:
         action_copy_prompt = menu.addAction(
             tr("copy_prompt_to_clipboard")
         )
@@ -45,10 +68,12 @@ class NotesContextMenu:
             tr("copy_pdf_page_text_only")
         )
 
+        # Display the menu at the requested position:
         selected = menu.exec(
             self.web_view.mapToGlobal(pos)
         )
 
+        # Dispatch the selected menu action:
         if selected == action_cut:
             self.scripts.cut_selected_text(
                 self._handle_cut_result
@@ -69,17 +94,22 @@ class NotesContextMenu:
             self._copy_pdf_text()
 
     def _paste_from_clipboard(self):
-        """Paste clipboard HTML or text into Quill."""
-        
+        """
+        Retrieve clipboard content and paste it into the Quill editor.
+        """
+
+        # Access the system clipboard:
         clipboard = QGuiApplication.clipboard()
         mime_data = clipboard.mimeData()
 
+        # Prefer formatted HTML content:
         if (
             mime_data.hasHtml()
             and mime_data.html().strip()
         ):
             pasted_content = mime_data.html()
 
+        # Convert plain text into HTML paragraphs:
         elif (
             mime_data.hasText()
             and mime_data.text().strip()
@@ -93,9 +123,11 @@ class NotesContextMenu:
                 for line in text.splitlines()
             )
 
+        # Handle an empty or unsupported clipboard:
         else:
             pasted_content = ""
 
+        # Insert clipboard content into the editor:
         if pasted_content:
             self.scripts.paste_html(
                 pasted_content
@@ -111,17 +143,22 @@ class NotesContextMenu:
             )
 
     def _copy_prompt(self):
-        """Generate and copy the complete AI prompt."""
-        
+        """
+        Generate and copy the current PDF and notes context as an AI prompt.
+        """
+
+        # Save the active page note before generating the prompt:
         self.main_window._save_current_note_for_page(
             self.main_window._notes_page
         )
 
+        # Generate the AI prompt from the current document context:
         prompt_text = (
             self.main_window
             .generate_full_ai_prompt_text()
         )
 
+        # Copy the generated prompt to the system clipboard:
         if prompt_text:
             QGuiApplication.clipboard().setText(
                 prompt_text
@@ -137,13 +174,17 @@ class NotesContextMenu:
             )
 
     def _copy_pdf_text(self):
-        """Copy text from the currently visible PDF page."""
-        
+        """
+        Copy the extracted text of the current PDF page to the clipboard.
+        """
+
+        # Retrieve text from the active PDF page:
         text = (
             self.main_window
             .get_pdf_text_for_current_page()
         )
 
+        # Copy available PDF text:
         if text:
             QGuiApplication.clipboard().setText(
                 text
@@ -159,8 +200,9 @@ class NotesContextMenu:
             )
 
     def _handle_copy_result(self, text):
-        """Copy selected Quill text to the clipboard."""
-        
+        """Handle selected text returned by the Quill copy operation."""
+
+        # Copy the selected text to the system clipboard:
         if text:
             QGuiApplication.clipboard().setText(
                 text
@@ -176,8 +218,11 @@ class NotesContextMenu:
             )
 
     def _handle_cut_result(self, text):
-        """Copy cut Quill text to the clipboard."""
-        
+        """
+        Handle selected text returned by the Quill cut operation.
+        """
+
+        # Store the removed text in the system clipboard:
         if text:
             QGuiApplication.clipboard().setText(
                 text
@@ -193,8 +238,11 @@ class NotesContextMenu:
             )
 
     def _show_status(self, message):
-        """Display a temporary message in MainWindow's status bar."""
-        
+        """
+        Display a temporary operation message in the application status bar.
+        """
+
+        # Show the message for three seconds:
         self.main_window.statusBar().showMessage(
             message,
             3000,

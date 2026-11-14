@@ -1,4 +1,6 @@
-"""JavaScript used to inject Nexpace's dark scrollbar styling."""
+"""
+Dark scrollbar styling.
+"""
 
 
 SCROLLBAR_SCRIPT = """

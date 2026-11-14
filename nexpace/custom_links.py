@@ -1,3 +1,14 @@
+"""
+Custom links management panel.
+
+Responsible for:
+- Displaying user-defined web links
+- Adding links through input dialogs
+- Managing link list presentation
+- Forwarding link opening and removal requests
+- Updating the interface after language changes
+"""
+
 from PySide6.QtCore import Qt, Signal, QUrl
 from PySide6.QtGui import QFont
 from PySide6.QtWidgets import (
@@ -11,17 +22,28 @@ from .links import CustomLinkItem
 
 
 class CustomLinksWidget(QWidget):
-    """Manage user-defined web links and expose them as dockable panels."""
+    """
+    Container for user-defined web links.
 
+    Coordinates link item widgets and delegates link management
+    operations to the main application window.
+    """
+
+    # Link opening signal:
+    # - Emits the link name and URL.
     openLinkRequested = Signal(str, str)
 
     def __init__(self, main_window):
         super().__init__()
+
+        # Main window reference:
         self.main_window = main_window
 
+        # Main panel layout:
         layout = QVBoxLayout(self)
         layout.setContentsMargins(12, 12, 12, 12)
 
+        # Section header:
         self.header = QLabel(tr("my_links_tools"))
         font = QFont()
         font.setPointSize(11)
@@ -29,15 +51,19 @@ class CustomLinksWidget(QWidget):
         self.header.setFont(font)
         layout.addWidget(self.header)
 
+        # Add link button:
+        # - Opens the link creation dialog when clicked.
         self.add_btn = QPushButton(tr("add_new_link_page"))
         self.add_btn.setStyleSheet("padding: 6px; font-weight: bold;")
         self.add_btn.clicked.connect(self.prompt_add_custom)
         layout.addWidget(self.add_btn)
 
+        # Scrollable links area:
         scroll = QScrollArea(self)
         scroll.setWidgetResizable(True)
         scroll.setFrameShape(QFrame.NoFrame)
 
+        # Link items container:
         self.container = QWidget()
         self.links_layout = QVBoxLayout(self.container)
         self.links_layout.setAlignment(Qt.AlignTop)
@@ -46,23 +72,35 @@ class CustomLinksWidget(QWidget):
         layout.addWidget(scroll, 1)
 
     def refresh_ui(self):
-        """Update labels/buttons after language change and rebuild link list."""
-        
+        """
+        Update translated labels and refresh the displayed links.
+        """
+
+        # Interface localization:
         self.header.setText(tr("my_links_tools"))
         self.add_btn.setText(tr("add_new_link_page"))
+
+        # Rebuild links from application state:
         self.rebuild_links(self.main_window.custom_links)
 
     def rebuild_links(self, services_list):
+        """
+        Rebuild the link list using the provided link definitions.
+        """
+
+        # Clear existing link widgets:
         while self.links_layout.count():
             item = self.links_layout.takeAt(0)
             if item.widget():
                 item.widget().deleteLater()
 
+        # Empty links state:
         if not services_list:
             empty_lbl = QLabel(tr("no_custom_links_html"))
             self.links_layout.addWidget(empty_lbl)
             return
 
+        # Create link items and connect their actions:
         for service in services_list:
             item = CustomLinkItem(service["name"], service["url"])
             item.open_requested.connect(self.openLinkRequested.emit)
@@ -70,21 +108,34 @@ class CustomLinksWidget(QWidget):
             self.links_layout.addWidget(item)
 
     def prompt_add_custom(self):
+        """
+        Handle the custom link creation process.
+
+        Collect and normalize the URL, determine the panel name,
+        and pass the new link to the main window for registration.
+        """
+
+        # Request the link URL:
         url_str, ok = QInputDialog.getText(
             self, tr("add_custom_link"), tr("enter_url")
         )
         if not ok or not url_str.strip():
             return
 
+        # Normalize the URL scheme:
         url_str = url_str.strip()
         if not (url_str.startswith("http://") or url_str.startswith("https://")):
             url_str = "https://" + url_str
 
+        # Generate a default panel name from the URL:
         default_name = QUrl(url_str).host() or url_str
+
+        # Request the panel display name:
         name_str, ok = QInputDialog.getText(
             self, tr("window_name"), tr("enter_panel_name"), text=default_name
         )
         if not ok or not name_str.strip():
             name_str = default_name
 
+        # Register the link through the main window:
         self.main_window.add_custom_link(name_str.strip(), url_str)

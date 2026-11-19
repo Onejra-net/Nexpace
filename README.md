@@ -1,5 +1,8 @@
 ## Important Notice - Open-Source Version
 
+**This repository contains an older, publicly released
+open-source version of Nexpace.**
+
 # Nexpace
 
 Nexpace is an open-source desktop application built with **Python** and **PySide6**.

@@ -104,7 +104,7 @@ Modified versions may be distributed under a different name, provided that the o
 
 Nexpace in the presentation videos featured on the ONEJRA website:
 
-[![Watch presentation video 1](https://img.youtube.com/vi/RKx-XSxnlEw/hqdefault.jpg)](https://www.youtube.com/watch?v=ewJ8zR57QOk)
+[![Watch presentation video 1](https://img.youtube.com/vi/ewJ8zR57QOk/hqdefault.jpg)](https://www.youtube.com/watch?v=ewJ8zR57QOk)
 
 ### Full License
 
